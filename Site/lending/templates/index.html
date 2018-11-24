@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{%static 'main.css'%}">
+  <title>Welcome page</title>
+  </head>
+  <body>
+    <div class="header">
+        <h1 class="title">Технология</h1>
+        <ul class="links">
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Технология</a></li>
+        </ul>
+    </div>
+
+    <div class="blog-page">
+        {% for cont in form %}
+          <div class="block">
+            <div class="blog-heading">
+            {{cont.title}}
+            {{cont.date}}
+            {{cont.author}}
+            </div>
+            <div class="blog">
+              {{cont.text}}
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  </body>
+</html>
